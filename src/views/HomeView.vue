@@ -1,18 +1,50 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="homeContent">
+      <div class="title">
+        <h2>Vue JS Application</h2>
+      </div>
+      <PostForm />
+      <JsonPosts />
+      <PaginationBtn />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import PaginationBtn from "@/components/Pagination.vue";
+import JsonPosts from "../components/JsonPosts.vue";
+import PostForm from "../components/PostForm.vue";
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    JsonPosts,
+    PostForm,
+    PaginationBtn,
   },
 };
 </script>
+<style scoped>
+.home {
+  height: 100%;
+  width: 70vw;
+  padding: 2%;
+  color: black;
+  font-family: "Nunito", sans-serif;
+  background-color: #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.homeContent {
+  width: 90%;
+  margin: auto;
+}
+
+.title {
+  margin: auto;
+  padding: 10px 10px;
+}
+</style>
